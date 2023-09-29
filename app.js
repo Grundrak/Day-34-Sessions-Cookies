@@ -2,23 +2,21 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const bodyparser = require(body-parser)
+const bodyParser = require('body-parser');
 // Server Variable Structure
-const users = [
-    {
-      username: 'alice',
-      password: 'hashed_password',
-    },
-    // Add more user objects as needed
-  ];
-  app.use(express.static('public'));
-  app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(express.json());
 app.set('view engine','ejs');
 app.set('views','./views');
 
 
 
 
+
+
+const registrationRoutes = require('./routes/registration');
+app.use('/register', registrationRoutes);
 
 
 app.listen(3000, () => {
