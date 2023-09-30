@@ -1,3 +1,11 @@
+const users = [
+  {
+    username: 'alice',
+    password: 'hashed_password',
+  },
+
+];
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');

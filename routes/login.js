@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-
+const users = [
+    {
+      username: 'alice',
+      password: 'hashed_password',
+    },
+  
+  ];
 router.get('/', (req, res) => {
     res.render('login' ,req.query);
       });
